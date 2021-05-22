@@ -18,7 +18,7 @@ WORKDIR /src
 
 COPY . /src
 RUN dos2unix /src/scripts/docker-link-repos.sh && bash /src/scripts/docker-link-repos.sh
-RUN yarn --network-timeout=100000 install
+RUN yarn --network-timeout=200000 install
 RUN yarn build
 
 # Copy the config now so that we don't create another layer in the app image
